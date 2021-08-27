@@ -1,3 +1,3 @@
-# EE579 Project
+# EE579 Group Project
 
 IoT Automation Platform.
