@@ -1,0 +1,25 @@
+.button {
+    -fx-background-color: white;
+}
+.button:hover {
+    -fx-background-color: rgba(245, 147, 135, 0.45);
+}
+
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color:  #f59387;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-font-size: 15;
+    -fx-font-family: Avenir Book;
+}
+
+#plus {
+    -fx-background-color: black;
+    -fx-background-radius: 0px 0px 15px 15px;
+}

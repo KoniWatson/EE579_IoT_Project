@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<GridPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="959.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="956.0" minHeight="10.0" prefHeight="891.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <Pane fx:id="nav" prefHeight="47.0" prefWidth="1703.0" style="-fx-background-color: white;">
+         <children>
+            <Button fx:id="newRecipes" layoutX="489.0" mnemonicParsing="false" onMouseClicked="#newRecipePane" prefHeight="100.0" prefWidth="268.0" stylesheets="@stylesheet.css" text="- NEW RECIPES -" textFill="#9f9f9f">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <Button fx:id="connectedDevices" layoutX="1025.0" mnemonicParsing="false" onMouseClicked="#connectedDevicesPane" prefHeight="100.0" prefWidth="268.0" stylesheets="@stylesheet.css" text="- CONNECTED DEVICES -" textFill="#9f9f9f">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <Button fx:id="recipeHistory" layoutX="757.0" mnemonicParsing="false" onMouseClicked="#recipeHisPane" prefHeight="100.0" prefWidth="268.0" stylesheets="@stylesheet.css" text="- RECIPE HISTORY -" textFill="#9f9f9f">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="93.0" fitWidth="315.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/microBigLogo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="newRec" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="892.0" prefWidth="1700.0" stylesheets="@stylesheet.css" visible="false" GridPane.rowIndex="1">
+         <children>
+            <Pane prefHeight="70.0" prefWidth="550.0" style="-fx-background-color: #126e9f#126e9f;">
+               <children>
+                  <Label layoutX="14.0" text="MAKING A NEW RECIPE">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="87.0" layoutY="331.0" prefHeight="115.0" prefWidth="1503.0" style="-fx-background-color: #f59387;">
+               <children>
+                  <HBox alignment="CENTER" layoutX="33.0" layoutY="8.0" prefHeight="100.0" prefWidth="1438.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="58.0" prefWidth="48.0" text="IF" textFill="WHITE">
+                           <font>
+                              <Font name="Yu Gothic Regular" size="40.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="75.0" prefWidth="231.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="232.0" text="ACTION" textFill="WHITE">
+                                 <font>
+                                    <Font name="Yu Gothic Regular" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ChoiceBox fx:id="microAction" prefHeight="70.0" prefWidth="230.0" />
+                           </children>
+                        </VBox>
+                        <Label layoutX="117.0" layoutY="31.0" prefHeight="58.0" prefWidth="65.0" text="ON" textFill="WHITE">
+                           <font>
+                              <Font name="Yu Gothic Regular" size="40.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="100.0" prefWidth="231.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="232.0" text="INPUT DEVICE" textFill="WHITE">
+                                 <font>
+                                    <Font name="Yu Gothic Regular" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ChoiceBox fx:id="microInput" prefHeight="70.0" prefWidth="230.0">
+                                 <contextMenu>
+                                    <ContextMenu>
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </ChoiceBox>
+                           </children>
+                        </VBox>
+                        <Label prefHeight="58.0" prefWidth="113.0" text="THEN" textFill="WHITE">
+                           <font>
+                              <Font name="Yu Gothic Regular" size="40.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="100.0" prefWidth="232.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="232.0" text="EVENT" textFill="WHITE">
+                                 <font>
+                                    <Font name="Yu Gothic Regular" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ChoiceBox fx:id="microEvent1" prefHeight="70.0" prefWidth="230.0" />
+                           </children>
+                        </VBox>
+                        <Label prefHeight="58.0" prefWidth="61.0" text="ON" textFill="WHITE">
+                           <font>
+                              <Font name="Yu Gothic Regular" size="40.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="100.0" prefWidth="232.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="232.0" text="OUTPUT DEVICE" textFill="WHITE">
+                                 <font>
+                                    <Font name="Yu Gothic Regular" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ChoiceBox fx:id="microOutput1" prefHeight="70.0" prefWidth="230.0">
+                                 <contextMenu>
+                                    <ContextMenu>
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </ChoiceBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+               </children>
+            </Pane>
+            <VBox alignment="CENTER_LEFT" layoutX="87.0" layoutY="127.0" prefHeight="115.0" prefWidth="749.0" spacing="10.0">
+               <children>
+                  <HBox prefHeight="22.0" prefWidth="749.0">
+                     <children>
+                        <Label text="STEP ONE -  ">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" text="Choose the action that will trigger the event">
+                           <font>
+                              <Font name="Avenir Book" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="32.0" prefWidth="665.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="107.0" text="STEP TWO - ">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="608.0" text="Select the device that the action is to be perform the action on">
+                           <font>
+                              <Font name="Avenir Book" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="22.0" prefWidth="749.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="133.0" text="STEP THREE - ">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="34.0" prefWidth="645.0" text="Choose the event that will be performed">
+                           <font>
+                              <Font name="Avenir Book" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="20.0" prefWidth="749.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="113.0" text="STEP FOUR - ">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="439.0" text="Select the device that the event will be performed on">
+                           <font>
+                              <Font name="Avenir Book" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Pane fx:id="advancedSettings" layoutX="339.0" layoutY="567.0" prefHeight="187.0" prefWidth="923.0" visible="false">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="162.0" layoutX="14.0" layoutY="14.0" stroke="#074885" strokeType="INSIDE" strokeWidth="2.0" width="895.0" />
+                  <Label layoutX="358.0" layoutY="21.0" text="ADVANCED SETTINGS" textFill="#074885">
+                     <font>
+                        <Font name="Arial" size="17.0" />
+                     </font>
+                  </Label>
+                  <Pane fx:id="button" layoutX="97.0" layoutY="59.0" prefHeight="94.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <CheckBox fx:id="press" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#buttonPress" text="Button Press" />
+                        <CheckBox fx:id="hold" layoutX="114.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#buttonHold" text="Button Hold" />
+                        <Pane fx:id="buttonHold" layoutY="47.0" prefHeight="47.0" prefWidth="200.0" visible="false">
+                           <children>
+                              <TextField fx:id="holdTime" layoutX="26.0" layoutY="21.0" />
+                              <Label layoutX="19.0" text="How long is button to be held:" />
+                              <Label layoutX="178.0" layoutY="25.0" text="s" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="tempPot" layoutX="21.0" layoutY="45.0" prefHeight="121.0" prefWidth="351.0" visible="false">
+                     <children>
+                        <CheckBox fx:id="threshold" layoutX="118.0" layoutY="61.0" mnemonicParsing="false" onMouseClicked="#thresholdSetting" text="Threshold Setting" />
+                        <Pane fx:id="thresholdValue" layoutX="94.0" layoutY="76.0" prefHeight="38.0" prefWidth="168.0" visible="false">
+                           <children>
+                              <TextField fx:id="thresholdVal" layoutX="10.0" layoutY="7.0" />
+                           </children>
+                        </Pane>
+                        <CheckBox fx:id="con" layoutX="134.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#conPolling" text="Continuous" />
+                     </children>
+                  </Pane>
+                  <Label layoutX="728.0" layoutY="51.0" text="OUTPUT" />
+                  <Pane fx:id="colour" layoutX="602.0" layoutY="59.0" prefHeight="94.0" prefWidth="296.0" visible="false">
+                     <children>
+                        <Label layoutX="74.0" layoutY="21.0" text="Choose the RGB LED colour:" />
+                        <ChoiceBox fx:id="colourSelect" layoutX="73.0" layoutY="47.0" prefWidth="150.0" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="colour1" layoutX="602.0" layoutY="77.0" prefHeight="58.0" prefWidth="296.0" visible="false">
+                     <children>
+                        <CheckBox fx:id="step" layoutX="82.0" layoutY="6.0" mnemonicParsing="false" onMouseClicked="#colourStep" text="Colour Step Through" />
+                        <CheckBox fx:id="cycle" layoutX="92.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#conCycle" text="Continuous Cycle" />
+                     </children>
+                  </Pane>
+                  <Label layoutX="180.0" layoutY="51.0" text="INPUT" />
+               </children>
+            </Pane>
+            <Button fx:id="send" layoutX="1442.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#sendSettings" prefHeight="73.0" prefWidth="148.0" style="-fx-background-color: black;" text="SEND" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button id="plus" layoutX="800.0" layoutY="446.0" mnemonicParsing="false" onMouseClicked="#additionalOutputs" opacity="0.13" prefHeight="38.0" prefWidth="790.0" stylesheets="@stylesheet.css" text="ADD MORE OUTPUTS" textFill="WHITE">
+               <font>
+                  <Font name="Yu Gothic Regular" size="17.0" />
+               </font>
+            </Button>
+            <Pane fx:id="addOutput" layoutX="800.0" layoutY="446.0" prefHeight="115.0" prefWidth="790.0" style="-fx-background-color: #f59387;" visible="false">
+               <children>
+                  <HBox alignment="CENTER" layoutX="21.0" layoutY="7.0" prefHeight="100.0" prefWidth="736.0" spacing="30.0">
+                     <children>
+                        <Label prefHeight="58.0" prefWidth="113.0" text="THEN" textFill="WHITE">
+                           <font>
+                              <Font name="Yu Gothic Regular" size="40.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="100.0" prefWidth="232.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="232.0" text="EVENT" textFill="WHITE">
+                                 <font>
+                                    <Font name="Yu Gothic Regular" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ChoiceBox fx:id="microEvent2" prefHeight="70.0" prefWidth="230.0" />
+                           </children>
+                        </VBox>
+                        <Label prefHeight="58.0" prefWidth="61.0" text="ON" textFill="WHITE">
+                           <font>
+                              <Font name="Yu Gothic Regular" size="40.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="100.0" prefWidth="232.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="232.0" text="OUTPUT DEVICE" textFill="WHITE">
+                                 <font>
+                                    <Font name="Yu Gothic Regular" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ChoiceBox fx:id="microOutput2" prefHeight="70.0" prefWidth="230.0">
+                                 <contextMenu>
+                                    <ContextMenu>
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </ChoiceBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <Button layoutX="764.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#closeAddOutput" prefHeight="107.0" prefWidth="27.0" text="X" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="his" visible="false" GridPane.rowIndex="1">
+         <children>
+            <Pane prefHeight="73.0" prefWidth="391.0" style="-fx-background-color: #126e9f;">
+               <children>
+                  <Label layoutX="18.0" text="RECIPE HISTORY">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="recHis" layoutX="29.0" layoutY="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="716.0" prefWidth="1645.0" stylesheets="@stylesheet.css" />
+         </children>
+      </Pane>
+      <Pane fx:id="conDev" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="891.0" prefWidth="1702.0" visible="false" GridPane.rowIndex="1">
+         <children>
+            <Pane prefHeight="64.0" prefWidth="507.0" style="-fx-background-color: #126e9f;">
+               <children>
+                  <Label layoutX="20.0" layoutY="-3.0" text="CONNECTED DEVICES">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="device" layoutX="29.0" layoutY="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="716.0" prefWidth="1645.0" stylesheets="@stylesheet.css" />
+            <Button fx:id="connectDevice" layoutX="1474.0" layoutY="817.0" mnemonicParsing="false" onMouseClicked="#newDevice" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: black;" text="CONNECT NEW DEVICE" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="home" layoutX="10.0" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="892.0" prefWidth="1704.0" style="-fx-background-color: #1569C7;" stylesheets="@stylesheet.css" GridPane.rowIndex="1">
+         <children>
+            <ImageView fitHeight="187.0" fitWidth="710.0" layoutX="628.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/microBigLogo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</GridPane>
